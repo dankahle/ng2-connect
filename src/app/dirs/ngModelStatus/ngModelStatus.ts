@@ -1,3 +1,5 @@
+// bitches about app.fireChange not being there if left uncommented
+/*
 import {Directive, NgModel} from 'angular2/angular2';
 import {AppComponent} from '../../app';
 
@@ -14,14 +16,16 @@ import {AppComponent} from '../../app';
 })
 export class NgModelStatus {
    _parent: AppComponent;
-   myval = 'lala1';
    constructor(public control:NgModel) {
-      var i = 5;
    }
    get valid() { return this.control.valid; }
    get invalid() { return !this.control.valid; }
    set parent(val) {
       this._parent = val;
+      this._parent.fireChange.toRx().subscribe((cval) => {
+         console.log('pchange', cval)
+      })
    }
 }
 
+*/

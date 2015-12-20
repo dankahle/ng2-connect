@@ -1,25 +1,50 @@
-import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
-import {Greeting} from './comp/greeting/greeting';
-import {Greeter} from './greeter';
+import {bootstrap, Component, EventEmitter, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/core';
+import {HeroService} from './hero/heroService';
+import {Hero} from './hero/hero'
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 
 @Component({
    selector: 'my-app',
    templateUrl: 'app/app.html',
-   styles: [`
-      .valid {color: blue;}
-      .invalid {color: red;}
-   `],
-   directives: [CORE_DIRECTIVES,FORM_DIRECTIVES, Greeting]
+   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
 })
 
-
 export class AppComponent {
-   greeting: string;
-   constructor(greeter:Greeter) {
-      this.greeting = greeter.getGreeting();
+   heroes:Hero[] = [];
+
+   constructor(hs:HeroService) {
+
+/*
+      var obs = {
+         next(x) { console.log(x, 'lala')}, // gets called, but not onNext
+         throw(x) { console.log('error', x)},
+         return() { console.log('completed')},// never gets called
+      }
+*/
+
+/*
+      hs
+         .getHeroes()
+         .subscribe(x => {
+            console.log(x)
+            this.heroes.push(x)
+         });
+*/
+      hs
+         .getHeroes()
+         .subscribe(x => {
+            //console.log(x.json())
+            this.heroes = x.json()
+         });
+
    }
 
+
 }
-bootstrap(AppComponent, [Greeter]);
+bootstrap(AppComponent, [Http, HTTP_PROVIDERS, HeroService]);
+
+
+
+
 

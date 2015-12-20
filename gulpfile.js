@@ -1,6 +1,6 @@
 var TS_FILES = 'src/**/*.ts',
    LESS_FILES = 'src/**/*.less',
-   HTML_FILES = 'src/**/*.html';
+   HTML_FILES = ['src/**/*.html', 'src/**/*.json'];
 
 var gulp = require('gulp'),
    ts = require('gulp-typescript'),

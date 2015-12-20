@@ -10,7 +10,7 @@ class Greeter {
 @Component({
    selector: 'greeting',
    template: '<div>{{greeting}}</div>',
-   bindings: [Greeter]
+   providers: [Greeter]
 })
 
 export class Greeting {

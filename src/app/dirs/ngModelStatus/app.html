@@ -1,1 +1,3 @@
-<input [(ng-model)]="prop" [parent]="self">
+
+
+<input [(ng-model)]="prop" #c [parent]="self" (change)="doit(c.value)">
