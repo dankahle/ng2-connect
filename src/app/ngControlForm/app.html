@@ -1,0 +1,19 @@
+<div>
+   <p>Submit the form to see the data object Angular builds</p>
+   <h2>form demo</h2>
+   <form #f="form" (ng-submit)="onSubmit(f.value)">
+      <h3>Control group: credentials</h3>
+      <div ng-control-group1="credentials">
+         <p>Login: <input type="text" ng-control1="login"></p>
+         <p>Password: <input type="password" ng-control1="password"></p>
+      </div>
+      <h3>Control group: person</h3>
+      <div ng-control-group1="person">
+         <p>First name: <input type="text" ng-control1="firstName"></p>
+         <p>Last name: <input type="text" ng-control1="lastName"></p>
+      </div>
+      <button type="submit">Submit Form</button>
+      <p>Form data submitted:</p>
+   </form>
+   <pre>{{data}}</pre>
+</div>

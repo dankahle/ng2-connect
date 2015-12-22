@@ -1,16 +1,23 @@
-import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES, FORM_PROVIDERS} from 'angular2/core';
+import {bootstrap, ElementRef, Component, CORE_DIRECTIVES, FORM_DIRECTIVES, FORM_PROVIDERS} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import  {Hero} from './hero-form/hero';
-import  {HeroForm} from './hero-form/hero-form';
 
 @Component({
    selector: 'my-app',
    //templateUrl: 'app/app.html',
-   template: '<hero-form></hero-form>',
-   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, HeroForm],
+   template: `
+       <div>lala</div>
+   `,
+   directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
 })
 
 export class AppComponent {
+
+constructor(elem: ElementRef) {
+   var a = elem.nativeElement;
+   console.log('constaints test?', a.classList.contains('test'));
+   a.classList.add('one');
+   a.classList.toggle("two");
+}
 
 }
 
