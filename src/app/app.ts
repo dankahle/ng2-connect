@@ -14,9 +14,9 @@ export class AppComponent {
 
 constructor(elem: ElementRef) {
    var a = elem.nativeElement;
-   console.log('constaints test?', a.classList.contains('test'));
    a.classList.add('one');
    a.classList.toggle("two");
+   console.log('constaints test?', a.classList.contains('test'), a.classList);
 }
 
 }
