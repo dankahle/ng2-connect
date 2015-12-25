@@ -10,7 +10,7 @@ export class HeroService {
    }
 
    getHeroes() {
-      return this.http.get('app/hero/heroes.json');
+      return this.http.get('app/hero/heroes.ts');
    }
 
 

@@ -1,27 +1,44 @@
 import {bootstrap} from 'angular2/platform/browser';
-import {Component, Pipe, EventEmitter} from 'angular2/core';
+import {Component, Pipe, EventEmitter, provide} from 'angular2/core';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES, FORM_PROVIDERS} from 'angular2/common';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouterLink} from 'angular2/router';
 import {Landing} from './router/Landing';
-import {UserDetail} from './router/UserDetail';
+import {UserDetail} from './router/users/UserDetail';
 import {About} from './router/About';
-import {UserList} from './router/userList';
-import {UserServ} from './router/userServ';
+import {UserView} from './router/users/userView';
+import {UserServ} from './router/users/userServ';
+import {HeroList} from './router/heroes/heroList';
+import {HeroDetail} from './router/heroes/heroDetail';
+import {Hero} from './router/heroes/hero';
+import heroes from './router/heroes/heroes';
 
 @Component({
    selector: 'my-app',
    //templateUrl: 'app/app.html',
    template: `
-   <a [routerLink]="['UserList']">UserList</a>
-   <a [routerLink]="['About', {stuff: 'lala'}]">About</a>
-   <router-outlet></router-outlet>
+   <h4>Routing app</h4>
+   <div class="nav">
+      <a [routerLink]="['Landing']">Home</a>
+      <!--<a [routerLink]="['UserList']">UserList</a>-->
+      <a [routerLink]="['HeroList']">HeroList</a>
+      <a [routerLink]="['About', {stuff: 'lala'}]">About</a>
+   </div>
+   <hr>
+   <div class="view">
+      <router-outlet></router-outlet>
+   </div>
   `,
+   styles: [`
+         .nav a { border: 1px solid; padding-right: 20px; }
+         .nav a:hover { background-color:plum !important; text-decoration:none; }
+   `],
    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-   {path: '/users', name: 'UserList', component: UserList},
-   {path: '/users/:id', name: 'UserDetail', component: UserDetail},
+   //{path: '/users/...', name: 'UserView', component: UserView},
+   {path: '/hero', name: 'HeroList', component: HeroList},
+   {path: '/hero/:id', name: 'HeroDetail', component: HeroDetail},
    {path: '/about', name: 'About', component: About},
    {path: '/', name: 'Landing', component: Landing, useAsDefault: true},
 ])
@@ -31,7 +48,8 @@ export class AppComponent {
 
 }
 
-bootstrap(AppComponent, [Http, HTTP_PROVIDERS, FORM_PROVIDERS, ROUTER_PROVIDERS, UserServ]);
+bootstrap(AppComponent, [Http, HTTP_PROVIDERS,
+   FORM_PROVIDERS, ROUTER_PROVIDERS, UserServ, provide('Heroes', {useValue: heroes})]);
 
 
 
