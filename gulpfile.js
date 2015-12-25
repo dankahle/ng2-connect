@@ -23,7 +23,10 @@ gulp.task('ts', function () {
          "emitDecoratorMetadata": true,
          "experimentalDecorators": true,
          "removeComments": false,
-         "noImplicitAny": false
+         "noImplicitAny": false,
+         "files": [
+            "./typings/es6-promise/es6-promise.d.ts"
+         ]
       }))
       .pipe(sourceMaps.write())
       .pipe(gulp.dest('temp/'))

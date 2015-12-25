@@ -1,4 +1,5 @@
-import {Component, NgForm, FORM_DIRECTIVES, CORE_DIRECTIVES, FORM_PROVIDERS} from 'angular2/core';
+import {Component} from 'angular2/core';
+import {NgForm, FORM_DIRECTIVES, CORE_DIRECTIVES, FORM_PROVIDERS} from 'angular2/common';
 import {Hero} from './hero';
 
 @Component({

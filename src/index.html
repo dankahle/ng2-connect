@@ -1,26 +1,29 @@
 <html>
 <head>
    <title>dkng2</title>
+   <base href="/">
+
    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-   <script src="../node_modules/systemjs/dist/system.src.js"></script>
-   <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
-   <script src="../node_modules/angular2/bundles/http.dev.js"></script>
-   <script src="../bower_components/lodash/lodash.js"></script>
-   <script>
-      System.config({
-         //defaultJSExtensions: true,
-         paths: {
-            'app/*': 'app/*'
-         },
-         packages: {
-            'app': {defaultExtension: 'js'},
-         }
-      });
-      System.import('app/app');
-   </script>
 </head>
 <body>
 <my-app class="test">Loading...</my-app>
+
+<script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>
+<script src="../node_modules/es6-shim/es6-shim.min.js"></script>
+<script src="../node_modules/systemjs/dist/system.js"></script>
+<script>
+   //configure system loader
+   System.config({defaultJSExtensions: true});
+</script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="../node_modules/rxjs/bundles/Rx.js"></script>
+<script src="../node_modules/angular2/bundles/angular2.js"></script>
+<script src="../node_modules/angular2/bundles/http.js"></script>
+<script src="../node_modules/angular2/bundles/router.js"></script>
+<script>
+   //bootstrap the Angular2 application
+   System.import('app/app').catch(console.log.bind(console));
+</script>
 </body>
 </html>
 

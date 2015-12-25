@@ -1,4 +1,4 @@
-import {Directive, EventEmitter} from 'angular2/angular2';
+import {Directive, EventEmitter} from 'angular2/core';
 
 @Directive({
    selector: 'button[count-clicks]',

@@ -1,5 +1,5 @@
-import {Component} from 'angular2/angular2';
-//import {Greeter} from '../../greeter';
+import {Component} from 'angular2/core';
+//import {Greeter} from './greeter';
 
 class Greeter {
    getGreeting() {
