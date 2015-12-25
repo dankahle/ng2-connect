@@ -16,7 +16,7 @@ export class UserDetail {
    users:User[];
 
    constructor(userServ:UserServ, routeParams:RouteParams) {
-      this.user = _.findWhere(userServ.getUsers(), {id: routeParams.get('id')});
+      this.user = _.findWhere(userServ.getUsers(), {id: parseInt(routeParams.get('id'))});
    }
 
 }
