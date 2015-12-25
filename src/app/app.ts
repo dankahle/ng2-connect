@@ -14,7 +14,7 @@ import {UserServ} from './router/userServ';
    //templateUrl: 'app/app.html',
    template: `
    <a [routerLink]="['UserList']">UserList</a>
-   <a [routerLink]="['About']">About</a>
+   <a [routerLink]="['About', {stuff: 'lala'}]">About</a>
    <router-outlet></router-outlet>
   `,
    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES]
