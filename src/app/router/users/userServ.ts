@@ -9,9 +9,6 @@ export class UserServ {
       {id: 2, name: 'carl', age: 60},
    ];
 
-   constructor(private userServ:UserServ) {
-
-   }
    getUsers() {
       return this.users;
    }

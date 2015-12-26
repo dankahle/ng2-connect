@@ -20,7 +20,7 @@ import heroes from './router/heroes/heroes';
    <h4>Routing app</h4>
    <div class="nav">
       <a [routerLink]="['Landing']">Home</a>
-      <a [routerLink]="['UserView']">UserView</a>
+      <!--<a [routerLink]="['UserView', 'UserView']">UserView</a>-->
       <a [routerLink]="['HeroList']">HeroList</a>
       <a [routerLink]="['About', {stuff: 'lala'}]">About</a>
    </div>
@@ -36,7 +36,7 @@ import heroes from './router/heroes/heroes';
    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-   {path: '/users/...', name: 'UserView', component: UserView},
+   //{path: '/users/...', name: 'UserView', component: UserView},
    {path: '/hero', name: 'HeroList', component: HeroList},
    {path: '/hero/:id', name: 'HeroDetail', component: HeroDetail},
    {path: '/about', name: 'About', component: About},
@@ -50,6 +50,7 @@ export class AppComponent {
 
 bootstrap(AppComponent, [Http, HTTP_PROVIDERS,
    FORM_PROVIDERS, ROUTER_PROVIDERS, provide('Heroes', {useValue: heroes})]);
+
 
 
 

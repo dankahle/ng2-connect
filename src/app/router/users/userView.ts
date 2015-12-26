@@ -8,20 +8,20 @@ import {UserServ} from './userServ';
    template: `
          <h3>User View</h3>
          <router-outlet></router-outlet>
-      </div>
    `,
    styles: [`
       .left { width: 25%; float:left;}
       .right { width: 25%; float:left;}
    `],
    directives: [ROUTER_DIRECTIVES],
-   providers: ['UserServ']
+   providers: [UserServ]
 })
 @RouteConfig([
-   {path: '/lala5', name: 'UserView', component: UserList, useAsDefault: true},
+   {path: '/', name: 'UserView', component: UserList, useAsDefault: true},
    {path: '/list', name: 'UserList', component: UserList},
    {path: '/:id', name: 'UserDetail', component: UserDetail},
 ])
 export class UserView {
 
 }
+

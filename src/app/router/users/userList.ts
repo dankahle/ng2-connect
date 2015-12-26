@@ -22,10 +22,6 @@ import {UserDetail} from './userDetail';
    `],
    directives: [NgFor, ROUTER_DIRECTIVES]
 })
-@RouteConfig([
-   {path: '/', name: 'UserList', component: UserList, useAsDefault: true},
-   {path: '/:id', name: 'UserDetail', component: UserDetail},
-])
 export class UserList {
    users:User[];
 
