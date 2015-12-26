@@ -1,4 +1,3 @@
-/// <reference path="../../../../typings/lodash.d.ts" />
 import {Component} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 import {UserServ} from './userServ';
@@ -15,7 +14,7 @@ export class UserDetail {
    user:User;
 
    constructor(userServ:UserServ, routeParams:RouteParams) {
-      this.user = _.findWhere(userServ.getUsers(), {id: parseInt(routeParams.get('id'))});
+      this.user = userServ.getOne(parseInt(routeParams.get('id')));
    }
 
 }

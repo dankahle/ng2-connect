@@ -1,4 +1,12 @@
 
+/*
+html5 server:
+Not sure there's any nice way of doing this, i.e. there will be files requested that don't
+exist that need to return 404 not index.html which is what a catchall at the end would
+do, in lieu of that, then have to look for appropriate paths. This sucks as well, but
+not sure any way around it really. How else do you return index.html for some paths and
+404 for others?
+*/
 var express = require('express');
 
 var app = express();
@@ -11,11 +19,27 @@ app.use('/api/*', function(req, res) {// api
 })
 
 app.get('*', function(req, res) { // index.html for html5 routing
-   res.sendFile(__dirname + '/temp/index.html');
+   var found = false;
+   var acceptablePaths = ['/index.html', '/hero', '/about', '/user'];
+   acceptablePaths.forEach(function(v) {
+      if(req.url.toLowerCase().indexOf(v) == 0)
+         found = true;
+   })
+   if(req.url === '/')
+      found = true;
+   if(found) {
+      console.log('index', req.url)
+      res.sendFile(__dirname + '/temp/index.html');
+   }
+   else {
+      console.log(404, req.url);
+      res.status(404).end();
+   }
 })
 
-app.listen(3001, function () {
-   console.log('server started on 3001')
+var port = 3002;
+app.listen(port, function () {
+   console.log('server started on ' + port)
 })
 
 

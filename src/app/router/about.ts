@@ -9,10 +9,9 @@ import {RouteParams} from 'angular2/router';
 export class About {
 
    constructor(routeParams:RouteParams) {
-      console.log(routeParams.get('stuff'));
+      //console.log(routeParams.get('stuff'));
    }
 
-   onInit() {console.log('about')}
 
 
 

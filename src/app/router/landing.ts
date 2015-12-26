@@ -6,6 +6,5 @@ import {Component} from 'angular2/core';
    `,
 })
 export class Landing {
-   onInit() {console.log('landing')}
 
 }
