@@ -1,3 +1,4 @@
+/*
 /// <reference path="../../typings/tsd.d.ts" />
 import {bootstrap} from 'angular2/platform/browser';
 import {Component, Pipe, EventEmitter, provide} from 'angular2/core';
@@ -51,3 +52,4 @@ bootstrap(AppComponent, [Http, HTTP_PROVIDERS,
 
 
 
+*/
