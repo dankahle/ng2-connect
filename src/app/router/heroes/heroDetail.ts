@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/lodash.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 import {Component, Inject} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 import {Hero} from './hero';

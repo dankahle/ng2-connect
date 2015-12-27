@@ -1,4 +1,4 @@
-/// <reference path="../../../../typings/lodash.d.ts" />
+/// <reference path="../../../../typings/tsd.d.ts" />
 
 import {User} from './user';
 

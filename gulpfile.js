@@ -16,18 +16,7 @@ gulp.task('clean', function () {
 gulp.task('ts', function () {
    return gulp.src(TS_FILES)
       .pipe(sourceMaps.init())
-      .pipe(ts({
-         "target": "ES5",
-         "module": "commonjs",
-         "sourceMap": true,
-         "emitDecoratorMetadata": true,
-         "experimentalDecorators": true,
-         "removeComments": false,
-         "noImplicitAny": false,
-         "files": [
-            "./typings/es6-promise/es6-promise.d.ts"
-         ]
-      }))
+      .pipe(ts(require('./tsconfig.json')))
       .pipe(sourceMaps.write())
       .pipe(gulp.dest('temp/'))
 });

@@ -1,3 +1,4 @@
+/// <reference path="../../typings/tsd.d.ts" />
 import {bootstrap} from 'angular2/platform/browser';
 import {Component, Pipe, EventEmitter, provide} from 'angular2/core';
 import {CORE_DIRECTIVES, FORM_DIRECTIVES, FORM_PROVIDERS} from 'angular2/common';
@@ -17,35 +18,21 @@ import {CrisisCenterComponent} from './routereg/crisis-center/crisis-center.comp
    selector: 'my-app',
    //templateUrl: 'app/app.html',
    template: `
-   <h4>Routing app</h4>
-   <div class="nav">
-      <a [routerLink]="['Landing']">Home</a>
-      <a [routerLink]="['UserView', 'UserView']">UserView</a>
-      <a [routerLink]="['HeroList']">HeroList</a>
-      <a [routerLink]="['About', {stuff: 'lala'}]">About</a>
-   </div>
-   <hr>
-   <div class="view">
-      <router-outlet></router-outlet>
-   </div>
+
   `,
-   styles: [`
-         .nav a { border: 1px solid; padding-right: 20px; }
-         .nav a:hover { background-color:plum !important; text-decoration:none; }
-   `],
    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
-@RouteConfig([
-   {path: '/users/...', name: 'UserView', component: UserView},
-   {path: '/hero', name: 'HeroList', component: HeroList},
-   {path: '/hero/:id', name: 'HeroDetail', component: HeroDetail},
-   {path: '/about', name: 'About', component: About},
-   {path: '/', name: 'Landing', component: Landing, useAsDefault: true},
-])
 export class AppComponent {
+   promise = new Promise((res, rej) => res(5));
+
    constructor() {
    }
 
+   ngOnInit() {
+      console.log(_.uniq([4,5,5,6]))
+      this.promise.then(x => console.log(x))
+
+   }
 }
 
 bootstrap(AppComponent, [Http, HTTP_PROVIDERS,
