@@ -6,6 +6,7 @@ import {DkTab} from './dkTab';
    selector: 'dkTabControl',
    template: `
          <ul class="nav nav-tabs">
+            <!--notice how ngfor works jsut fine with querylist as it iterates-->
             <li *ngFor="#tab of tabs" [class.active]="tab.selected"><a href="" (click)="selectTab($event, tab)">{{tab.name}}</a></li>
          </ul>
       <ng-content></ng-content>
