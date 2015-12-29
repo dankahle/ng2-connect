@@ -6,7 +6,7 @@ import {DkTab} from './dkTab';
    selector: 'dkTabControl',
    template: `
          <ul class="nav nav-tabs">
-            <li *ngFor="#tab of tabs" [class.active]="tab === selectedTab"><a href="" (click)="selectTab($event, tab)">{{tab.name}}</a></li>
+            <li *ngFor="#tab of tabs" [class.active]="tab.selected"><a href="" (click)="selectTab($event, tab)">{{tab.name}}</a></li>
          </ul>
       <ng-content></ng-content>
    `,
@@ -18,20 +18,18 @@ import {DkTab} from './dkTab';
    directives: [NgFor]
 })
 export class DkTabControl {
-   qlTabs:QueryList<DkTab>;
-   tabs: DkTab[] = [];
-   selectedTab:DkTab;
+   tabs:QueryList<DkTab>;
 
    constructor(@Query(DkTab, {}) tabs: QueryList<DkTab>) {
-      this.qlTabs = tabs;
+      this.tabs = tabs// array is empty here
    }
 
    ngAfterContentInit() {
-      console.log('init')
-      this.tabs = this.qlTabs.toArray();
-      this.selectTab(null, this.tabs[0]);
+      //this.tabs = this.qlTabs.toArray();// array is full here
+      this.selectTab(null, this.tabs.first);
    }
-   // self-registering tabs, should be able to use Query, but doesn't work right now
+
+   // self-registering tabs, inject DkTabControl into DkTab constructor
 /*
    addTab(tab:DkTab) {
       this.tabs.push(tab);
@@ -41,13 +39,11 @@ export class DkTabControl {
 */
 
    selectTab(e, tab) {
-      this.tabs.forEach(x => x.selected = false);
-      this.selectedTab = tab;
+      this.tabs.toArray().forEach(x => x.selected = false);
       tab.selected = true;
       if(e)
          e.preventDefault();
    }
-
 }
 
 
