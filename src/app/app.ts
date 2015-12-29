@@ -23,12 +23,10 @@ import {DkTab} from "./comp/tabs/dkTab";
    template: `
       <dkTabControl>
          <dkTab name="one">
-            <p>one: para one</p>
-            <p>one: para two</p>
+            <br><p>tab one content</p>
          </dkTab>
          <dkTab name="two">
-            <p>two: para one</p>
-            <p>two: para two</p>
+            <br><p>tab two content</p>
          </dkTab>
       </dkTabControl>
 

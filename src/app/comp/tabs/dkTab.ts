@@ -5,7 +5,7 @@ import {DkTabControl} from './dkTabControl';
 @Component({
    selector: 'dkTab',
    template: `
-   <div [hidden]="!selected">
+   <div class="tab-pane" [hidden]="!selected">
       <ng-content></ng-content>
    </div>
    `,
@@ -16,10 +16,12 @@ export class DkTab {
    parent: DkTabControl;
    selected = false;
 
+/*
    constructor(tabControl:DkTabControl) {
       this.parent = tabControl;
-      this.parent.addTab(this);
+      //this.parent.addTab(this);
    }
+*/
 
    ngAfterContentChecked() {
       //console.log('child', this.parent.selectedTab);
