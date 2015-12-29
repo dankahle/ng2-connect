@@ -24,8 +24,9 @@ export class DkTabControl {
       this.tabs = tabs// array is empty here
    }
 
+
    ngAfterContentInit() {
-      //this.tabs = this.qlTabs.toArray();// array is full here
+      //this.tabs = this.qlTabs.toArray();// array is full here, so can turn into an arr here
       this.selectTab(null, this.tabs.first);
    }
 

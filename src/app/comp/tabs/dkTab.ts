@@ -13,13 +13,16 @@ import {DkTabControl} from './dkTabControl';
 })
 export class DkTab {
    name:string;
-   parent: DkTabControl;
+   //parent: DkTabControl;
    selected = false;
 
+   //self-registering tabs. The parent is unavailable if it has a @Query in it, so it's
+   // one way or another, user the parent's query to fill the tab arr or
+   // don't use a query and then the child can call the parent.
 /*
    constructor(tabControl:DkTabControl) {
       this.parent = tabControl;
-      //this.parent.addTab(this);
+      this.parent.addTab(this);
    }
 */
 
