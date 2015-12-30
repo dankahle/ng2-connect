@@ -38,7 +38,7 @@ app.get('*', function(req, res) { // index.html for html5 routing
    }
 })
 
-var port = 3002;
+var port = 3000;
 app.listen(port, function () {
    console.log('server started on ' + port)
 })

@@ -1,9 +1,0 @@
-
-<div *ng-for="#item of [1,2,3,4,5]">
-   <button id="{{item*5}}" count-clicks (bclick)="addToSet($event)">click me</button>
-</div>
-<ul>
-   <li *ng-for="#pair of pairs">
-      id: {{pair.id}}, count: {{pair.count}}
-   </li>
-</ul>
