@@ -1,4 +1,4 @@
-import {Component, Query, QueryList} from 'angular2/core';
+import {Component, ContentChildren, QueryList} from 'angular2/core';
 import {NgFor} from 'angular2/common';
 import {DkTab} from './dkTab';
 
@@ -19,11 +19,13 @@ import {DkTab} from './dkTab';
    directives: [NgFor]
 })
 export class DkTabControl {
-   tabs:QueryList<DkTab>;
+   @ContentChildren(DkTab, {}) tabs:QueryList<DkTab>;
 
+/*
    constructor(@Query(DkTab, {}) tabs: QueryList<DkTab>) {
       this.tabs = tabs// array is empty here
    }
+*/
 
 
    ngAfterContentInit() {
