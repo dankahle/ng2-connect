@@ -1,0 +1,52 @@
+
+
+@import "../../../app.less";
+
+.global-nav {
+   //.outline;
+   height: 50px;
+   font-size: 20px;
+   line-height: 50px;
+   background-color: #eee;
+
+   .brand, .menu, .title {
+      float: left;
+      width: 100 / 3%;
+   }
+   .brand {
+      padding-left: 10px;
+   }
+
+   .menu {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1;
+      a {
+         @back: plum;
+         margin-top: 7px;
+         display: inline-block;
+         padding: 10px;
+         border-radius: 2px;
+         text-decoration: none;
+
+         &:not(:last-child) {
+            margin-right: 20px;
+         }
+         &.active {
+            background: @back;
+            &:hover {
+               background: darken(@back, 10%);
+            }
+         }
+         &:hover {
+            background: #bbb;
+            text-decoration: none;
+         }
+      }
+
+   }
+   .title {
+      text-align: right;
+      padding-right: 10px;
+   }
+}

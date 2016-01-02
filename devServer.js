@@ -20,8 +20,7 @@ app.use('/api/*', function(req, res) {// api
 
 app.get('*', function(req, res) { // index.html for html5 routing
    var found = false;
-   var acceptablePaths = ['/index.html', '/hero', '/about', '/user',
-      '/crisis-center', '/hero'];
+   var acceptablePaths = ['/index.html', '/dashboard', '/inbound'];
    acceptablePaths.forEach(function(v) {
       if(req.url.toLowerCase().indexOf(v) == 0)
          found = true;

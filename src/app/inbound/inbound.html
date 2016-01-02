@@ -1,0 +1,5 @@
+<div class="header">
+   <a [routerLink]="['Files']" [class.active]="loc.path().indexOf('/inbound/files') === 0">Files</a>
+   <a [routerLink]="['Definitions']" [class.active]="loc.path().indexOf('/inbound/definitions') === 0">Definitions</a>
+</div>
+<router-outlet></router-outlet>

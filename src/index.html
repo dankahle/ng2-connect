@@ -1,13 +1,13 @@
 <html>
 <head>
-   <title>ng2-base</title>
+   <title>connect</title>
    <base href="/">
 
    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
    <style> .ng-hide { display: none; } </style>
 </head>
 <body>
-<my-app class="test">Loading...</my-app>
+<app class="test">Loading...</app>
 
 <script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>
 <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
@@ -17,11 +17,14 @@
    System.config({defaultJSExtensions: true});
 </script>
 <script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>jq.noConflict()</script>
 <script src="../node_modules/rxjs/bundles/Rx.js"></script>
 <script src="../node_modules/angular2/bundles/angular2.js"></script>
 <script src="../node_modules/angular2/bundles/http.js"></script>
 <script src="../node_modules/angular2/bundles/router.js"></script>
 <script>
+//   System.import("../node_modules/angular2/src/animate/animation.js")
    //bootstrap the Angular2 application
    System.import('app/app').catch(console.log.bind(console));
 </script>

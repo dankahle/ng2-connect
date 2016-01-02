@@ -1,0 +1,29 @@
+
+@import '../../../app.less';
+
+.glyphicon {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   z-index: 101;
+   &:hover {
+      color: #999;
+      cursor: pointer;
+   }
+}
+.leftNav {
+   height: 100%;
+   width: 200px;
+   .outline;
+   position: absolute;
+   top: 0;
+   left: -200px;
+   transition: .3s left;
+   z-index: 100;
+   padding: 30px 10px 10px 10px;
+
+
+   &.open {
+      left: 0;
+   }
+}

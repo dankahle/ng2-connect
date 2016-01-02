@@ -1,24 +1,40 @@
 /// <reference path="../../typings/tsd.d.ts" />
 import {bootstrap} from 'angular2/platform/browser';
-import {Component} from 'angular2/core';
+import {Component, Directive, provide} from 'angular2/core';
 import {COMMON_DIRECTIVES, FORM_PROVIDERS} from 'angular2/common';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
-import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouterLink} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouterLink, Location} from 'angular2/router';
+import {GlobalNav} from "./common/comp/globalNav/globalNav";
+import {Globals} from './common/service/globals';
+import {ApplicationRef, enableProdMode} from "angular2/core";
+import {Dashboard} from './dashboard/dashboard';
+import {Inbound} from './inbound/inbound';
+
+//enableProdMode();
+
 
 @Component({
-   selector: 'my-app',
-   //templateUrl: 'app/app.html',
-   template: `
-      name: {{name}}
-  `,
-   directives: [COMMON_DIRECTIVES, ROUTER_DIRECTIVES]
+   selector: 'app',
+   templateUrl: 'app/app.html',
+   styleUrls: ['app/app.css'],
+   directives: [COMMON_DIRECTIVES, ROUTER_DIRECTIVES, GlobalNav]
 })
-export class AppComponent {
-   name = _.uniq([4,5,5,6]);
+@RouteConfig([
+   {path: '/dashboard/...', name: 'Dashboard', component: Dashboard, useAsDefault: true},
+   {path: '/inbound/...', name: 'Inbound', component: Inbound},
+])
+export class App {
+
+
+   constructor(private globals:Globals) {
+      globals.register('app', this);
+   }
+
 
 }
 
-bootstrap(AppComponent, [Http, HTTP_PROVIDERS, FORM_PROVIDERS, ROUTER_PROVIDERS]);
+bootstrap(App, [Http, HTTP_PROVIDERS, FORM_PROVIDERS, ROUTER_PROVIDERS, Globals, Location, provide('GlobalNavHeight', {useValue: 50})]);
+
 
 
 
