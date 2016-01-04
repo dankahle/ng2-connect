@@ -34,7 +34,7 @@ export class LeftNav {
    }
 
    constructor(public elem:ElementRef, private rend:Renderer) {
-      this.leftNav = jq(this.elem.nativeElement).find('.left-nav')[0];
+      this.leftNav = jq(this.elem.nativeElement).find('.left-nav-div')[0];
       this.$leftNav = jq(this.leftNav);
    }
 

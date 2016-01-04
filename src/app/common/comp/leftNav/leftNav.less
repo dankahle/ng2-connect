@@ -1,39 +1,49 @@
 @import '../../../app.less';
 
-.left-nav {
-   background: inherit;
-   width: 200px;
-   .outline;
+.glyphicon {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   z-index: 101;
+   font-size: 20px;
+   &:hover {
+      cursor: pointer;
+   }
+   &.open {
+      color: #333;
+   }
+}
+
+.left-nav-div {
    position: absolute;
    left: 0;
    top: 0;
+   overflow: hidden;
+   background: inherit;
+   .outline;
    transform: translate3d(-100%, 0, 0);
    transition: .3s;
    z-index: 100;
+   width: 200px;
+   background: inherit;
    padding: 40px 10px 10px 10px;
-
-   .glyphicon {
-      color: #333;
-      position: absolute;
-      top: 10px;
-      left: 210px;
-      z-index: 101;
-      font-size: 20px;
-      &:hover {
-         color: #666;
-         cursor: pointer;
-      }
-   }
-
    &.open {
       transform: translate3d(0, 0, 0);
-      .glyphicon {
-         color: white;
-         left: 10px;
-      }
+   }
+}
+
+/*
+&.open {
+   .glyphicon {
+      color: white;
    }
 
+   .left-nav-div {
+      transform: translate3d(0, 0, 0);
+   }
 }
+*/
+
 
 
 
