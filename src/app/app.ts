@@ -8,6 +8,7 @@ import {GlobalNav} from "./common/comp/globalNav/globalNav";
 import {Globals} from './common/service/globals';
 import {ApplicationRef, enableProdMode} from "angular2/core";
 import {Dashboard} from './dashboard/dashboard';
+import {DashboardService} from './dashboard/service/dashboardService';
 import {Inbound} from './inbound/inbound';
 
 //enableProdMode();
@@ -33,7 +34,9 @@ export class App {
 
 }
 
-bootstrap(App, [Http, HTTP_PROVIDERS, FORM_PROVIDERS, ROUTER_PROVIDERS, Globals, Location, provide('GlobalNavHeight', {useValue: 50})]);
+bootstrap(App, [Http, HTTP_PROVIDERS, FORM_PROVIDERS, ROUTER_PROVIDERS,
+   Globals, Location, DashboardService,
+   provide('GlobalNavHeight', {useValue: 50})]);
 
 
 
