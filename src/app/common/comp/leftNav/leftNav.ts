@@ -34,7 +34,12 @@ export class LeftNav {
    }
 
    constructor(public elem:ElementRef, private rend:Renderer) {
+      //shadow
+      //let root = elem.nativeElement.shadowRoot;
+      //this.leftNav = jq(root).find('.left-nav-div')[0];
+
       this.leftNav = jq(this.elem.nativeElement).find('.left-nav-div')[0];
+      this.$leftNav = jq(this.leftNav);
       this.$leftNav = jq(this.leftNav);
    }
 
