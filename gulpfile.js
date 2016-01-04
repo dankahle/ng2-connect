@@ -7,7 +7,8 @@ var gulp = require('gulp'),
    del = require('del'),
    runSequence = require('run-sequence'),
    sourceMaps = require('gulp-sourcemaps'),
-   less = require('gulp-less')
+   less = require('gulp-less'),
+   autoPrefixer = require('gulp-autoprefixer')
 
 gulp.task('clean', function () {
    return del('temp/');
@@ -24,6 +25,7 @@ gulp.task('ts', function () {
 gulp.task('less', function () {
    gulp.src(LESS_FILES)
       .pipe(less())
+      .pipe(autoPrefixer())
       .pipe(gulp.dest('temp/'))
 })
 

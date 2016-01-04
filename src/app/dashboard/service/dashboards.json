@@ -1,0 +1,105 @@
+[
+   {
+      "groupName": "user",
+      "boards": [
+         {
+            "name": "Blank",
+            "tiles": [
+               {
+                  "id": 1,
+                  "title": "Tile One",
+                  "width": 1,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Two",
+                  "width": 2,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Three",
+                  "width": 1,
+                  "height": 2
+               }
+            ]
+         },
+         {
+            "name": "Consumer 360",
+            "tiles": [
+               {
+                  "id": 1,
+                  "title": "Tile Four",
+                  "width": 1,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Five",
+                  "width": 2,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Six",
+                  "width": 1,
+                  "height": 2
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "groupName": "shared",
+      "boards": [
+         {
+            "name": "Shared One",
+            "tiles": [
+               {
+                  "id": 1,
+                  "title": "Tile One",
+                  "width": 1,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Two",
+                  "width": 2,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Three",
+                  "width": 1,
+                  "height": 2
+               }
+            ]
+         },
+         {
+            "name": "Shared Two",
+            "tiles": [
+               {
+                  "id": 1,
+                  "title": "Tile Four",
+                  "width": 1,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Five",
+                  "width": 2,
+                  "height": 1
+               },
+               {
+                  "id": 1,
+                  "title": "Tile Six",
+                  "width": 1,
+                  "height": 2
+               }
+            ]
+         }
+      ]
+   }
+
+]

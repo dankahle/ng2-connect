@@ -1,4 +1,18 @@
 <div class="home">
-   <leftNav></leftNav>
+   <br><br><br>
+   lsflsdfasdfa
+   <leftNav class="left-nav" [width]="200">
+      <div *ngFor="#group of boardGroups">
+         <div class="board-group">{{group.groupName}}</div>
+         <div class="board" *ngFor="#board of group.boards">
+            {{board.name}}
+            <div class="toolbar">
+               <span class="glyphicon glyphicon-ok"></span>
+               <span class="glyphicon glyphicon-pencil"></span>
+               <span class="glyphicon glyphicon-remove-circle"></span>
+            </div>
+         </div>
+      </div>
+   </leftNav>
 
 </div>

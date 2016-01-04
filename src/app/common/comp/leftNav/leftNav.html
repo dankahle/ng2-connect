@@ -1,6 +1,5 @@
-<span class="glyphicon glyphicon-chevron-right" [style.display]="!open? 'inline-block': 'none'" (click)="fopen()"></span>
-<span class="glyphicon glyphicon-chevron-left"  [style.display]="open? 'inline-block': 'none'" (click)="fclose()"></span>
-<div setMaxHeight class="leftNav">
-   lealse
-   <ngContent></ngContent>
+<div setMaxHeight class="left-nav">
+   <span class="glyphicon glyphicon-chevron-right" [style.display]="!open? 'inline-block': 'none'" (click)="fopen()"></span>
+   <span class="glyphicon glyphicon-chevron-left"  [style.display]="open? 'inline-block': 'none'" (click)="fclose()"></span>
+   <ng-content></ng-content>
 </div>

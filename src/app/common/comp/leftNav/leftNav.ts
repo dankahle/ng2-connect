@@ -1,5 +1,5 @@
 /// <reference path="../../../../../typings/jquery/jquery.d.ts" />
-import {Component, ApplicationRef, EventEmitter, ElementRef, Renderer} from 'angular2/core';
+import {Component, ApplicationRef, EventEmitter, ElementRef, Renderer, ViewEncapsulation} from 'angular2/core';
 import {Animation} from '../../../../../node_modules/angular2/src/animate/animation';
 import {CssAnimationOptions} from '../../../../../node_modules/angular2/src/animate/css_animation_options';
 import {BrowserDetails} from '../../../../../node_modules/angular2/src/animate/browser_details';
@@ -11,6 +11,7 @@ import {SetMaxHeight} from '../../../common/dir/setMaxHeight/setMaxHeight';
    styleUrls: ['app/common/comp/leftNav/leftNav.css'],
    inputs: ['width', 'slide'],
    outputs: ['opened', 'closed'],
+   //encapsulation: ViewEncapsulation.Native,
    host: {
 
    },
@@ -20,22 +21,27 @@ export class LeftNav {
    open = false;
    opened = new EventEmitter<LeftNav>();
    closed = new EventEmitter<LeftNav>();
+   leftNav:HTMLElement;
+   $leftNav:JQuery;
 
-   set width(val) {
-   // set width
+   set width(width) {
+      this.$leftNav.outerWidth(width);
    }
 
-   set slide (val) {
-      // turn on/off transition
+   set slide (slide) {
+      if(!slide)
+         this.$leftNav.css('transition', 'none');
    }
 
    constructor(public elem:ElementRef, private rend:Renderer) {
+      this.leftNav = jq(this.elem.nativeElement).find('.left-nav')[0];
+      this.$leftNav = jq(this.leftNav);
    }
 
    fopen() {
       var options = new CssAnimationOptions();
       options.classesToAdd = ['open'];
-      let anim = new Animation(jq(this.elem.nativeElement).find('.leftNav')[0], options, new BrowserDetails());
+      let anim = new Animation(this.leftNav, options, new BrowserDetails());
       anim.onComplete(() => {
          this.opened.emit(this);
          this.open = true;
@@ -45,7 +51,7 @@ export class LeftNav {
    fclose() {
       var options = new CssAnimationOptions();
       options.classesToRemove = ['open'];
-      let anim = new Animation(jq(this.elem.nativeElement).find('.leftNav')[0], options, new BrowserDetails());
+      let anim = new Animation(this.leftNav, options, new BrowserDetails());
       anim.onComplete(() => {
          this.closed.emit(this);
          this.open = false;
