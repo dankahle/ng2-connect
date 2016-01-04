@@ -5,14 +5,26 @@
    .left-nav {
       color: darken(white, 10%);
       background: rgba(0,0,0,.8);
+
       & .board-group {
          background: #777;
+         margin-top: 10px;
       }
 
       .board {
-
+         position: relative;
+         height: 20px;
+         line-height: 20px;
          .toolbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 20px;
+            line-height: 20px;
 
+            .glyphicon {
+               cursor: pointer;
+            }
          }
       }
    }
