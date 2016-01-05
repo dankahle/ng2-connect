@@ -1,21 +1,24 @@
+@import '../../../app.less';
 
-.home {
+.dashboard-home {
    position: relative;
+   height: 100%;
 
    .left-nav  {
-      color: darken(white, 10%);
+      color: darken(white, 5%);
       background: rgba(0,0,0,.8);
 
-      & .board-group {
+      & /deep/ .board-group {
          background: #777;
          margin-top: 10px;
       }
 
-      .board {
+      /deep/ .board {
          position: relative;
          height: 20px;
          line-height: 20px;
-         .toolbar {
+
+         /deep/ .toolbar {
             position: absolute;
             top: 0;
             right: 0;
@@ -23,7 +26,17 @@
             line-height: 20px;
 
             .glyphicon {
+               .glyphicon;
                cursor: pointer;
+            }
+            .glyphicon-ok {
+               .glyphicon-ok;
+            }
+            .glyphicon-pencil {
+               .glyphicon-pencil;
+            }
+            .glyphicon-remove-circle {
+               .glyphicon-remove-circle;
             }
          }
       }

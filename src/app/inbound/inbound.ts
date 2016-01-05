@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, ViewEncapsulation} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig, Location} from 'angular2/router';
 import {Files} from './route/files/files';
 import {Definitions} from './route/definitions/definitions';
@@ -6,6 +6,7 @@ import {Definitions} from './route/definitions/definitions';
 @Component({
    templateUrl: 'app/inbound/inbound.html' ,
    styleUrls: ['app/inbound/inbound.css'],
+   encapsulation: ViewEncapsulation.Native,
    directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([

@@ -1,12 +1,18 @@
 
 
-@import (reference) "../../node_modules/bootstrap/less/bootstrap";
+@import (reference) "../../node_modules/bootstrap/less/variables";
+@import (reference) "../../node_modules/bootstrap/less/mixins";
+@import (reference) "../../node_modules/bootstrap/less/glyphicons";
 
-.outline {
+* /deep/ * {
+   box-sizing: border-box;
+}
+
+.outline() {
    outline: 1px solid;
    outline-offset: -1px;
 }
-.outline-red {
+.outline-red() {
    .outline;
    outline-color: red;
 }

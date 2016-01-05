@@ -1,6 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component, ViewEncapsulation} from 'angular2/core';
 
 @Component({
+   encapsulation: ViewEncapsulation.Native,
    templateUrl: 'app/inbound/route/files/files.html'
 })
 export class Files {
@@ -10,3 +11,4 @@ export class Files {
 
    }
 }
+

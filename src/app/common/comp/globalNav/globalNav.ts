@@ -1,4 +1,4 @@
-import {Component, ApplicationRef} from 'angular2/core';
+import {Component, ApplicationRef, ViewEncapsulation} from 'angular2/core';
 import {Globals} from '../../service/globals';
 import {RouterLink, Location} from 'angular2/router';
 
@@ -6,6 +6,7 @@ import {RouterLink, Location} from 'angular2/router';
    selector: 'globalNav',
    templateUrl: 'app/common/comp/globalNav/globalNav.html',
    styleUrls: ['app/common/comp/globalNav/globalNav.css'],
+   encapsulation: ViewEncapsulation.Native,
    directives: [RouterLink]
 })
 
