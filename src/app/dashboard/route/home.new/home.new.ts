@@ -1,11 +1,11 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 
 @Component({
-   templateUrl: 'app/dashboard/route/files.new/files.new.html',
+   templateUrl: 'app/dashboard/route/home.new/home.new.html',
    encapsulation: ViewEncapsulation.Native
 })
 export class HomeNew {
-   view = 'dashboard files.new';
+   view = 'dashboard.new';
 
    constructor() {
 

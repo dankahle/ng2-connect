@@ -1,7 +1,7 @@
 <div class="global-nav">
    <div class="brand">DkConnect</div>
    <div class="menu">
-      <a [routerLink]="['Dashboard']" [class.active]="loc.path().indexOf('/dashboard') === 0">Dashboard</a>
+      <a [routerLink]="['Dashboard', 'Home']" [class.active]="loc.path().indexOf('/dashboard') === 0">Dashboard</a>
       <a [routerLink]="['Inbound']" [class.active]="loc.path().indexOf('/inbound') === 0">Inbound</a>
    </div>
    <div class="title">{{title}}</div>

@@ -13,7 +13,6 @@ import {Inbound} from './inbound/inbound';
 
 //enableProdMode();
 
-
 @Component({
    selector: 'app',
    templateUrl: 'app/app.html',

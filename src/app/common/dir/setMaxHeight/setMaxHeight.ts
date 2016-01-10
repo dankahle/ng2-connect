@@ -5,6 +5,6 @@ import {Directive, ElementRef, Renderer, Inject} from 'angular2/core';
 })
 export class SetMaxHeight {
    constructor(elem:ElementRef, rend:Renderer, @Inject('GlobalNavHeight') globalNavHeight) {
-      rend.setElementStyle(elem, 'height', '' + (window.innerHeight - globalNavHeight) + 'px')
+      rend.setElementStyle(elem, 'min-height', '' + (window.innerHeight - globalNavHeight) + 'px')
    }
 }

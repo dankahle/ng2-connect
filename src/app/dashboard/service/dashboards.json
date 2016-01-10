@@ -4,6 +4,7 @@
       "boards": [
          {
             "name": "Blank",
+            "id": 100,
             "tiles": [
                {
                   "id": 1,
@@ -27,6 +28,7 @@
          },
          {
             "name": "Consumer 360",
+            "id": 101,
             "tiles": [
                {
                   "id": 1,
@@ -55,6 +57,7 @@
       "boards": [
          {
             "name": "Shared One",
+            "id": 102,
             "tiles": [
                {
                   "id": 1,
@@ -78,6 +81,7 @@
          },
          {
             "name": "Shared Two",
+            "id": 103,
             "tiles": [
                {
                   "id": 1,

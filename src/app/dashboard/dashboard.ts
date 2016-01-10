@@ -9,8 +9,9 @@ import {HomeNew} from './route/home.new/home.new';
    directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-   {path: '/', name: 'Dashboard', component: Home, useAsDefault: true},
-   {path: '/new', name: 'Home.new', component: HomeNew},
+   {path: '/:id', name: 'Home', component: Home},
+   {path: '/', name: 'Home', component: Home, useAsDefault: true},
+   {path: '/new', name: 'HomeNew', component: HomeNew},
 ])
 export class Dashboard {
 

@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
+import {Router, RouteParams} from 'angular2/router';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import {LeftNav} from '../../../common/comp/leftNav/leftNav';
 import {DashboardService, BoardGroup} from '../../service/dashboardService';
@@ -13,20 +14,32 @@ import {Board} from '../../../model/board';
 export class Home {
    view = 'dashboard files';
    boardGroups:BoardGroup[] = [];
+   hideGroup:boolean[] = [false, true];
 
-   constructor(private dashboardService:DashboardService) {
+   constructor(private dashboardService:DashboardService, private router:Router, private routeParams:RouteParams) {
       this.refresh();
    }
 
+
+
    refresh() {
       this.dashboardService.getAll()
-         .map(x => {
-            x[0].groupName = 'profile';
-            return x;
+         .map(boardGroups => {
+            boardGroups[0].groupName = 'profile';
+            return boardGroups;
          })
-         .subscribe(x => {
-            this.boardGroups = x
+         .subscribe(boardGroups => {
+            this.boardGroups = boardGroups;
+
+            if(boardGroups[0].boards.length === 0)
+               this.router.navigate(['../HomeNew']);
+
+            console.log('id', this.routeParams.get('id'))
+            if(!this.routeParams.get('id'))
+               this.router.navigate(['../Home', {id: boardGroups[0].boards[0].id}]);
+
          });
    }
+
 
 }
