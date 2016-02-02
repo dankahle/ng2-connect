@@ -3,11 +3,11 @@
       <div class="left-nav-wrap">
          <div *ngFor="#group of boardGroups, #idx=index">
             <div class="board-group" (click)="hideGroup[idx] = !hideGroup[idx]">{{group.groupName}}</div>
-            <div class="accord-expand" [style.height]="hideGroup[idx]? '0px': (group.boards.length * 20) + 'px'">
+            <div class="accord-expand" [style.height]="hideGroup[idx]? '0px': 'auto'">
                <div class="board" *ngFor="#board of group.boards">
                   <a class="router-link" [routerLink]="['../Home', {id: board.id}]" >{{board.name}}</a>
                   <div class="toolbar">
-                     <span class="glyphicon glyphicon-ok" (click)=""></span>
+                     <span class="glyphicon glyphicon-ok"></span>
                      <span class="glyphicon glyphicon-pencil"></span>
                      <span class="glyphicon glyphicon-remove-circle"></span>
                   </div>
