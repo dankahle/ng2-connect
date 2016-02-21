@@ -34,16 +34,23 @@
             .no-underline;
 
          }
+
          .toolbar {
+            display: none;
             position: absolute;
             top: 0;
             right: 0;
             height: 20px;
             line-height: 20px;
+            z-index: 1;
+            background: #333;
 
             .glyphicon {
                .glyphicon;
                cursor: pointer;
+               display: inline-block;
+               padding: 0 2px;
+               margin-left: -.25em;
             }
             .glyphicon-ok {
                .glyphicon-ok;
@@ -53,6 +60,25 @@
             }
             .glyphicon-remove-circle {
                .glyphicon-remove-circle;
+            }
+         }
+
+         &:hover {
+            .toolbar {
+               display: inline-block;
+            }
+         }
+
+         .default-icon {
+            .glyphicon-ok;
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 20px;
+            line-height: 20px;
+            &.active {
+               display: inline-block;
             }
          }
       }

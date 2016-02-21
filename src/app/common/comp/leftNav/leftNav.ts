@@ -18,6 +18,7 @@ import {SetMaxHeight} from '../../../common/dir/setMaxHeight/setMaxHeight';
    directives: [SetMaxHeight]
 })
 export class LeftNav {
+   _width: number;
    open = false;
    opened = new EventEmitter<LeftNav>();
    closed = new EventEmitter<LeftNav>();
@@ -25,7 +26,9 @@ export class LeftNav {
    $leftNav:JQuery;
 
    set width(width) {
-      this.$leftNav.outerWidth(width);
+      this._width = width;
+      if(this.$leftNav)
+         this.$leftNav.outerWidth(width);
    }
 
    set slide (slide) {
@@ -34,12 +37,12 @@ export class LeftNav {
    }
 
    constructor(public elem:ElementRef, private rend:Renderer) {
-      //shadow
-      let root = elem.nativeElement.shadowRoot;
-      this.leftNav = jq(root).find('.left-nav-div')[0];
+   }
 
-      //this.leftNav = jq(this.elem.nativeElement).find('.left-nav-div')[0];
+   ngOnInit() {
+      this.leftNav = jq(this.elem.nativeElement.shadowRoot).find('.left-nav-div')[0];
       this.$leftNav = jq(this.leftNav);
+      this.$leftNav.outerWidth(this._width);// this happens after the width setting
    }
 
    fopen() {

@@ -1,0 +1,17 @@
+
+
+pass:
+
+converting to beta.6
+
+
+trying to decided just how you want to hack things up. One things' for sure:
+
+getting rid of any ::shadow and /deep/ references
+
+you're on leftNav now and wanted to get rid of the jq stuff in favor of View/ContentChild, but you need to find
+something via classname, i.e. it's not a component. ViewChild won't cut it then and Query only works for content
+children (really?, need to test this out). Query will work with #variables in the html. Maybe try that to see if that
+ will work ...
+
+ either way, go thorugh and lose any ::shadow and /deep/ refrences and try to incorporate view/contentChildren in there

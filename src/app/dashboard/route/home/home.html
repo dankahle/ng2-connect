@@ -7,10 +7,11 @@
                <div class="board" *ngFor="#board of group.boards">
                   <a class="router-link" [routerLink]="['../Home', {id: board.id}]" >{{board.name}}</a>
                   <div class="toolbar">
-                     <span class="glyphicon glyphicon-ok"></span>
+                     <span class="glyphicon glyphicon-ok" (click)="setDefault(board)"></span>
                      <span class="glyphicon glyphicon-pencil"></span>
                      <span class="glyphicon glyphicon-remove-circle"></span>
                   </div>
+                  <span class="default-icon glyphicon glyphicon-ok" [class.active]="board.default"></span>
                </div>
             </div>
          </div>

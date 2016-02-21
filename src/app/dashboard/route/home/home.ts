@@ -22,15 +22,19 @@ export class Home {
       this.refresh();
    }
 
-
+   setDefault(defBoard) {
+      this.boardGroups.forEach(group => {
+         group.boards.forEach(board => {
+            board.default = false;
+         })
+      })
+      defBoard.default = true;
+   }
 
    refresh() {
       this.dashboardService.getAll()
-         .map(boardGroups => {
-            boardGroups[0].groupName = 'profile';
-            return boardGroups;
-         })
          .subscribe(boardGroups => {
+            boardGroups[0].groupName = 'profile';
             this.boardGroups = boardGroups;
 
             if(boardGroups[0].boards.length === 0)
