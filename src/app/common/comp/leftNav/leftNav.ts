@@ -40,8 +40,8 @@ export class LeftNav {
    }
 
    ngOnInit() {
-      this.leftNav = jq(this.elem.nativeElement.shadowRoot).find('.left-nav-div')[0];
-      this.$leftNav = jq(this.leftNav);
+      this.leftNav = $(this.elem.nativeElement.shadowRoot).find('.left-nav-div')[0];
+      this.$leftNav = $(this.leftNav);
       this.$leftNav.outerWidth(this._width);// this happens after the width setting
    }
 

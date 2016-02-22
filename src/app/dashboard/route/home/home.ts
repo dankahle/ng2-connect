@@ -40,7 +40,6 @@ export class Home {
             if(boardGroups[0].boards.length === 0)
                this.router.navigate(['../HomeNew']);
 
-            console.log('id', this.routeParams.get('id'))
             if(!this.routeParams.get('id'))
                this.router.navigate(['../Home', {id: boardGroups[0].boards[0].id}]);
 

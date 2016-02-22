@@ -12,7 +12,6 @@ export class HomeNew {
    }
 
    routerOnActivate(a) {
-      console.log("dash files.new")
    }
 
 }
