@@ -1,5 +1,5 @@
 /// <reference path="../../../../../typings/jquery/jquery.d.ts" />
-import {Component, ApplicationRef, EventEmitter, ElementRef, Renderer, ViewEncapsulation} from 'angular2/core';
+import {Component, ApplicationRef, EventEmitter, ElementRef, Renderer} from 'angular2/core';
 import {Animation} from '../../../../../node_modules/angular2/src/animate/animation';
 import {CssAnimationOptions} from '../../../../../node_modules/angular2/src/animate/css_animation_options';
 import {BrowserDetails} from '../../../../../node_modules/angular2/src/animate/browser_details';
@@ -11,7 +11,6 @@ import {SetMaxHeight} from '../../../common/dir/setMaxHeight/setMaxHeight';
    styleUrls: ['app/common/comp/leftNav/leftNav.css'],
    inputs: ['width', 'slide'],
    outputs: ['opened', 'closed'],
-   encapsulation: ViewEncapsulation.Native,
    host: {
 
    },
@@ -40,7 +39,7 @@ export class LeftNav {
    }
 
    ngOnInit() {
-      this.leftNav = $(this.elem.nativeElement.shadowRoot).find('.left-nav-div')[0];
+      this.leftNav = $(this.elem.nativeElement).find('.left-nav-div')[0];
       this.$leftNav = $(this.leftNav);
       this.$leftNav.outerWidth(this._width);// this happens after the width setting
    }
