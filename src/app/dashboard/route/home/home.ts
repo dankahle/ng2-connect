@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Router, RouteParams} from 'angular2/router';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import {LeftNav} from '../../../common/comp/leftNav/leftNav';
@@ -9,7 +9,6 @@ import {ROUTER_DIRECTIVES} from "angular2/router";
 @Component({
    templateUrl: 'app/dashboard/route/home/home.html',
    styleUrls: ['app/dashboard/route/home/home.css'],
-   encapsulation: ViewEncapsulation.Native,
    directives: [LeftNav, COMMON_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 export class Home {

@@ -1,7 +1,7 @@
 /// <reference path="../../node_modules/angular2/typings/browser.d.ts"/>
 /// <reference path="../../typings/tsd.d.ts" />
 import {bootstrap} from 'angular2/platform/browser';
-import {Component, Directive, provide, ViewEncapsulation} from 'angular2/core';
+import {Component, Directive, provide} from 'angular2/core';
 import {COMMON_DIRECTIVES, FORM_PROVIDERS} from 'angular2/common';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouterLink, Location} from 'angular2/router';
@@ -18,7 +18,6 @@ import {Inbound} from './inbound/inbound';
    selector: 'app',
    templateUrl: 'app/app.html',
    styleUrls: ['app/app.css'],
-   encapsulation: ViewEncapsulation.Native,
    directives: [COMMON_DIRECTIVES, ROUTER_DIRECTIVES, GlobalNav]
 })
 @RouteConfig([
